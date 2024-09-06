@@ -252,7 +252,7 @@ def filtrar_cliente(cpf, clientes):
 
 def recuperar_conta_cliente(cliente):
     if not cliente.contas:
-        print("\n@@@ Cliente não possui conta! @@@")
+        print("\n Cliente não possui conta! ")
         return
 
     # FIXME: não permite cliente escolher a conta
@@ -265,7 +265,7 @@ def depositar(clientes):
     cliente = filtrar_cliente(cpf, clientes)
 
     if not cliente:
-        print("\n@@@ Cliente não encontrado! @@@")
+        print("\n Cliente não encontrado! ")
         return
 
     valor = float(input("Informe o valor do depósito: "))
@@ -284,7 +284,7 @@ def sacar(clientes):
     cliente = filtrar_cliente(cpf, clientes)
 
     if not cliente:
-        print("\n@@@ Cliente não encontrado! @@@")
+        print("\n Cliente não encontrado! ")
         return
 
     valor = float(input("Informe o valor do saque: "))
@@ -303,7 +303,7 @@ def exibir_extrato(clientes):
     cliente = filtrar_cliente(cpf, clientes)
 
     if not cliente:
-        print("\n@@@ Cliente não encontrado! @@@")
+        print("\n Cliente não encontrado! ")
         return
 
     conta = recuperar_conta_cliente(cliente)
@@ -331,7 +331,7 @@ def criar_cliente(clientes):
     cliente = filtrar_cliente(cpf, clientes)
 
     if cliente:
-        print("\n@@@ Já existe cliente com esse CPF! @@@")
+        print("\n Já existe cliente com esse CPF! ")
         return
 
     nome = input("Informe o nome completo: ")
@@ -351,7 +351,7 @@ def criar_conta(numero_conta, clientes, contas):
     cliente = filtrar_cliente(cpf, clientes)
 
     if not cliente:
-        print("\n@@@ Cliente não encontrado, fluxo de criação de conta encerrado! @@@")
+        print("\n Cliente não encontrado, fluxo de criação de conta encerrado! ")
         return
 
     # NOTE: O valor padrão de limite de saques foi alterado para 50 saques
@@ -398,7 +398,7 @@ def main():
             break
 
         else:
-            print("\n@@@ Operação inválida, por favor selecione novamente a operação desejada. @@@")
+            print("\n Operação inválida, por favor selecione novamente a operação desejada. ")
 
 
 main()
